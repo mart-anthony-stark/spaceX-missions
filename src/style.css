@@ -30,8 +30,8 @@ nav {
 }
 .app-main {
   margin-top: 60px;
-  /* background: var(--pri); */
-  background: url('https://stackblitz.com/files/react-mdw4mc/github/mart-anthony-stark/spaceX-missions/master/src/space.jpg');
+  background: var(--pri);
+  /* background: (); */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
