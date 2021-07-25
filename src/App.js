@@ -25,9 +25,11 @@ export default function App() {
       <Navbar />
 
       <input
+        id="search"
         type="text"
         value={search}
         onChange={e => setSearch(e.target.value)}
+        placeholder="Search Missions..."
       />
 
       <div className="missions-wrapper">
@@ -37,7 +39,7 @@ export default function App() {
             return m.mission_name.match(searchRegex);
           })
           .map((mission, index) => {
-            return <Mission info={data[index]} key={data.mission_id} />;
+            return <Mission info={mission} key={data.mission_id} />;
           })}
       </div>
 

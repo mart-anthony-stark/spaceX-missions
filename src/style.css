@@ -95,3 +95,15 @@ p {
   font-size: 2em;
   margin-right: 0.5em;
 }
+#search {
+  margin: 50px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  padding: 5px;
+  color: #faf8ff;
+  outline: none;
+}
+#search::placeholder {
+  color: #faf8ff;
+}
