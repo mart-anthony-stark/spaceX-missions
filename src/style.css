@@ -32,6 +32,8 @@ nav {
   background: var(--pri);
   color: #faf8ff;
   padding: 1em;
+}
+.missions-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -69,6 +71,10 @@ p {
   background: var(--btn);
   color: #fff;
   border-radius: 15px;
-  margin: 8px 3.em;
+  margin: 8px 3.5em;
+  display: block;
+}
+.footer {
+  min-height: 60px;
   display: block;
 }

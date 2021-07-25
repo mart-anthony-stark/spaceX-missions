@@ -22,9 +22,11 @@ export default function App() {
     <div className="app-main">
       <Navbar />
 
-      {data.map((mission, index) => {
-        return <Mission info={data[index]} key={data.mission_id} />;
-      })}
+      <div className="missions-wrapper">
+        {data.map((mission, index) => {
+          return <Mission info={data[index]} key={data.mission_id} />;
+        })}
+      </div>
 
       <Footer />
     </div>
