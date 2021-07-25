@@ -12,11 +12,14 @@ function Mission({ info }) {
       <a href={info.website} target="_blank">
         <h2>{info.mission_name}</h2>
       </a>
-      <h3>
-        <a href={info.wikipedia}> Go to wikipedia page </a>
-      </h3>
       <p>Manufacturers: {showManufacturers()}</p>
       <p id="description">{info.description}</p>
+      <h3>
+        <a href={info.wikipedia} id="wiki">
+          {' '}
+          Read more on Wikipedia{' '}
+        </a>
+      </h3>
     </div>
   );
 }

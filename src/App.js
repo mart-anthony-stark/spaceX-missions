@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Mission from './component/Mission';
+import Navbar from './component/Navbar';
+import Footer from './component/Footer';
 import './style.css';
 
 export default function App() {
@@ -18,15 +20,13 @@ export default function App() {
 
   return (
     <div className="app-main">
-      <nav>
-        <div className="logo">
-          Space<span>X</span> Missions
-        </div>
-      </nav>
-      <img src="" autoplay muted id="bg" />
+      <Navbar />
+
       {data.map((mission, index) => {
         return <Mission info={data[index]} key={data.mission_id} />;
       })}
+
+      <Footer />
     </div>
   );
 }
