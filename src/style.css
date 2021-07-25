@@ -76,5 +76,15 @@ p {
 }
 .footer {
   min-height: 60px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .contact {
+  display: flex;
+}
+.footer i {
+  font-size: 2em;
+  margin-right: em;
 }
