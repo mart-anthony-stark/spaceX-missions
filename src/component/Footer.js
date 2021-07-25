@@ -12,7 +12,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/mart-anthony-salazar-420ba81b6/"
           target="_blank"
         >
-          <i class="fa fa-linkedin-square" aria-hidden="true" />
+          <i className="fa fa-linkedin-square" aria-hidden="true" />
         </a>
       </div>
       <p>&copy;All rights reserved.</p>

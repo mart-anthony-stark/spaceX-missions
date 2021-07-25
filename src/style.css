@@ -44,6 +44,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 0.8em;
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
