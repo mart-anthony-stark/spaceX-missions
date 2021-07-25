@@ -36,7 +36,10 @@ export default function App() {
         {data
           .filter(m => {
             if (search == '') return m;
-            return m.mission_name.match(searchRegex);
+            return (
+              m.mission_name.match(searchRegex) ||
+              m.description.match(searchRegex)
+            );
           })
           .map((mission, index) => {
             return <Mission info={mission} key={data.mission_id} />;
