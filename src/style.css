@@ -113,3 +113,16 @@ p {
 #hide {
   display: none;
 }
+#buttons {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+#buttons button {
+  padding: 5px 15px;
+  background: var(--accent);
+  margin-right: 5px;
+  border: none;
+  color: #faf8ff;
+  cursor: pointer;
+}
