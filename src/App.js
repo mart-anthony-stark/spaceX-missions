@@ -61,6 +61,7 @@ export default function App() {
         search={search}
         setSearch={setSearch}
         isEmpty={missionIsEmpty()}
+        tab={tab}
       />
 
       <div className="missions-wrapper" id={tab == 'mission' ? 'show' : 'hide'}>
