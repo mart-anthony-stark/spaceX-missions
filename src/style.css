@@ -37,6 +37,7 @@ nav {
   background-attachment: fixed;
   color: #faf8ff;
   padding: 1em;
+  min-height: 100vh;
 }
 .missions-wrapper {
   display: flex;
@@ -44,7 +45,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 0.8em;
-  min-height: 100vh;
 }
 a {
   text-decoration: none;
@@ -106,4 +106,10 @@ p {
 }
 #search::placeholder {
   color: #faf8ff;
+}
+#show {
+  /* display: flex; */
+}
+#hide {
+  display: none;
 }
