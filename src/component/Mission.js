@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 function Mission({ info }) {
-  console.log(info);
   function showManufacturers() {
     return info.manufacturers.map(m => {
       return m + ' | ';

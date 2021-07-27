@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Welcome from './component/Welcome';
 import Mission from './component/Mission';
 import History from './component/History';
 import Navbar from './component/Navbar';
@@ -8,12 +9,22 @@ import Search from './component/Search';
 import './style.css';
 
 export default function App() {
+  const [info, setInfo] = useState({});
+  const [links, setLinks] = useState({});
   const [data, setData] = useState([]);
   const [history, setHistory] = useState([]);
   const [search, setSearch] = useState('');
-  const [tab, setTab] = useState('mission');
+  const [tab, setTab] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
   const searchRegex = new RegExp(search, 'i');
+
+  const getInfo = async () => {
+    const res = await fetch('https://api.spacexdata.com/v3/info');
+    const json = await res.json();
+
+    setLinks(json.links);
+    setInfo(json);
+  };
 
   const getMissions = async () => {
     const res = await fetch('https://api.spacexdata.com/v3/missions');
@@ -32,6 +43,7 @@ export default function App() {
   useEffect(() => {
     getMissions();
     getHistory();
+    getInfo();
   }, []);
 
   function missionIsEmpty() {
@@ -73,26 +85,21 @@ export default function App() {
         tab={tab}
       />
 
-      <div
-        className={'missions-wrapper ' + (tab == 'mission' ? 'show' : 'hide')}
-      >
+      <Welcome info={info} tab={tab} setTab={setTab} links={links} />
+
+      <div className={'wrapper ' + (tab == 'mission' ? 'show' : 'hide')}>
         {missions.map((mission, index) => {
           return <Mission info={mission} key={data.mission_id} />;
         })}
       </div>
 
-      <div
-        className={'missions-wrapper ' + (tab == 'history' ? 'show' : 'hide')}
-      >
+      <div className={'wrapper ' + (tab == 'history' ? 'show' : 'hide')}>
         {filteredHistory.map(history => {
           return <History history={history} tab={tab} />;
         })}
       </div>
 
-      <div
-        classNmae="missions-wrapper"
-        id={tab == 'history' ? 'show' : 'hide'}
-      />
+      <div classNmae="wrapper" id={tab == 'history' ? 'show' : 'hide'} />
 
       <Footer />
     </div>

@@ -131,7 +131,7 @@ nav {
   padding: 1em;
   min-height: 100vh;
 }
-.missions-wrapper {
+.wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
