@@ -15,7 +15,7 @@ function Mission({ info }) {
       <p>Manufacturers: {showManufacturers()}</p>
       <p id="description">{info.description}</p>
       <h3>
-        <a href={info.wikipedia} id="wiki">
+        <a href={info.wikipedia} target="_blank" id="wiki">
           {' '}
           Read more on Wikipedia{' '}
         </a>
