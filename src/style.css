@@ -2,6 +2,7 @@
   --pri: #000000;
   --accent: #ff9100;
   --btn: #a3691d;
+  --comp: rgba(255, 255, 255, 0.1);
 }
 * {
   margin: 0;
@@ -25,6 +26,94 @@ nav {
   background: var(--pri);
   z-index: 1;
 }
+.menu {
+  height: 45px;
+  width: 45px;
+  background: var(--accent);
+  border-radius: 30%;
+  display: none;
+  place-items: center;
+  cursor: pointer;
+  z-index: 5;
+}
+.menu .bar {
+  height: 2px;
+  width: 25px;
+  background: black;
+  transition: 0.5s ease;
+}
+.menu .bar::before,
+.menu .bar::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  background: black;
+  transition: 0.5s ease;
+}
+.menu .bar::before {
+  transform: translateY(-6px);
+}
+.menu .bar::after {
+  transform: translateY(6px);
+}
+.menu.open .bar {
+  background: none;
+}
+.menu.open .bar::before {
+  transform: rotate(45deg);
+}
+.menu.open .bar::after {
+  transform: rotate(-45deg);
+}
+.nav-btns {
+}
+/* HIDE MAIN BTNS IF WINDOW SCREEN IS SMALLER */
+@media (max-width: 700px) {
+  .nav-btns {
+    display: none;
+  }
+  .menu {
+    display: grid;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+  }
+}
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  height: 100vh;
+  width: 300px;
+  background: white;
+  /* z-index: 2; */
+  transition: 0.5s ease-in-out;
+}
+.sidebar.show {
+  right: 0;
+}
+.sidebar #buttons {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(20px);
+}
+.sidebar #buttons button {
+  padding: 35px;
+  font-size: 1.5em;
+  display: block;
+  background: none;
+  color: var(--pri);
+  width: 100%;
+}
+.sidebar #buttons button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 .logo {
   font-size: 1.5em;
 }
@@ -45,6 +134,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 0.8em;
+  margin-bottom: 20px;
 }
 a {
   text-decoration: none;
@@ -53,7 +143,7 @@ a {
 .mission {
   backdrop-filter: blur(50%);
   margin: 20px 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--comp);
   padding: 15px;
   border-radius: 25px;
 }
@@ -107,10 +197,10 @@ p {
 #search::placeholder {
   color: #faf8ff;
 }
-#show {
+.show {
   /* display: flex; */
 }
-#hide {
+.hide {
   display: none;
 }
 #buttons {
@@ -125,4 +215,14 @@ p {
   border: none;
   color: #faf8ff;
   cursor: pointer;
+}
+/* HISTORY */
+.history {
+  background: var(--comp);
+  padding: 2em;
+  border-radius: 15px;
+  max-width: 450px;
+}
+.history h3 {
+  color: var(--accent);
 }

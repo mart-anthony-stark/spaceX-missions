@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Mission from './component/Mission';
+import History from './component/History';
 import Navbar from './component/Navbar';
+import Sidebar from './component/Sidebar';
 import Footer from './component/Footer';
 import Search from './component/Search';
 import './style.css';
@@ -10,6 +12,7 @@ export default function App() {
   const [history, setHistory] = useState([]);
   const [search, setSearch] = useState('');
   const [tab, setTab] = useState('mission');
+  const [isOpen, setIsOpen] = useState(false);
   const searchRegex = new RegExp(search, 'i');
 
   const getMissions = async () => {
@@ -56,7 +59,13 @@ export default function App() {
 
   return (
     <div className="app-main">
-      <Navbar tab={tab} setTab={setTab} />
+      <Navbar tab={tab} setTab={setTab} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Sidebar
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        tab={tab}
+        setTab={setTab}
+      />
       <Search
         search={search}
         setSearch={setSearch}
@@ -64,15 +73,19 @@ export default function App() {
         tab={tab}
       />
 
-      <div className="missions-wrapper" id={tab == 'mission' ? 'show' : 'hide'}>
+      <div
+        className={'missions-wrapper ' + (tab == 'mission' ? 'show' : 'hide')}
+      >
         {missions.map((mission, index) => {
           return <Mission info={mission} key={data.mission_id} />;
         })}
       </div>
 
-      <div classNmae="missions-wrapper" id={tab == 'history' ? 'show' : 'hide'}>
+      <div
+        className={'missions-wrapper ' + (tab == 'history' ? 'show' : 'hide')}
+      >
         {filteredHistory.map(history => {
-          return <h1>{history.title}</h1>;
+          return <History history={history} tab={tab} />;
         })}
       </div>
 
