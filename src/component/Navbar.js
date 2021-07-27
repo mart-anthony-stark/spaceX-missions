@@ -12,8 +12,8 @@ export default function Navbar({ tab, setTab, isOpen, setIsOpen }) {
         Space<span>X</span> Missions
       </div>
       <div className="nav-btns" id="buttons">
-        <button onClick={() => setTab('mission')}>Missions</button>
-        <button onClick={() => setTab('history')}>History</button>
+        <button onClick={() => setTab('mission')} className={tab=='mission'?'active':''}>Missions</button>
+        <button onClick={() => setTab('history')} className={tab=='history'?'active':''}>History</button>
         <button onClick={() => setTab('')} />
       </div>
       <div

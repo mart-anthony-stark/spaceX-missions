@@ -1,7 +1,10 @@
 :root {
-  --pri: #000000;
+  --pri: #0f1013;
+  --accent: #478ec9;
+  --btn: #1e5f74;
+  /* --pri: #000000;
   --accent: #ff9100;
-  --btn: #a3691d;
+  --btn: #a3691d; */
   --comp: rgba(255, 255, 255, 0.1);
 }
 * {
@@ -186,11 +189,12 @@ p {
   margin-right: 0.5em;
 }
 #search {
-  margin: 50px;
+  margin: 15px;
   background: none;
   border: none;
   border-bottom: 2px solid var(--accent);
   padding: 5px;
+  font-size: 1.2em;
   color: #faf8ff;
   outline: none;
 }
@@ -210,11 +214,17 @@ p {
 }
 #buttons button {
   padding: 5px 15px;
-  background: var(--accent);
+  background: none;
   margin-right: 5px;
   border: none;
   color: #faf8ff;
   cursor: pointer;
+}
+#buttons button:hover {
+  color: var(--accent);
+}
+#buttons button.active {
+  color: var(--accent);
 }
 /* HISTORY */
 .history {
