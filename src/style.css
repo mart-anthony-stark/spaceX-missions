@@ -143,6 +143,12 @@ a {
   text-decoration: none;
   color: var(--accent);
 }
+/* HOME WELCOME SCREEN */
+.home {
+  
+}
+
+/* MISSIONS TAB */
 .mission {
   backdrop-filter: blur(50%);
   margin: 20px 0;

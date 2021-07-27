@@ -13,19 +13,28 @@ export default function Navbar({ tab, setTab, isOpen, setIsOpen }) {
       </div>
       <div className="nav-btns" id="buttons">
         <button
-          onClick={() => setTab('home')}
+          onClick={() => {
+            setTab('home');
+            window.scrollTo(0, 0);
+          }}
           className={tab == 'home' ? 'active' : ''}
         >
           Home
         </button>
         <button
-          onClick={() => setTab('mission')}
+          onClick={() => {
+            setTab('mission');
+            window.scrollTo(0, 0);
+          }}
           className={tab == 'mission' ? 'active' : ''}
         >
           Missions
         </button>
         <button
-          onClick={() => setTab('history')}
+          onClick={() => {
+            setTab('history');
+            window.scrollTo(0, 0);
+          }}
           className={tab == 'history' ? 'active' : ''}
         >
           History
