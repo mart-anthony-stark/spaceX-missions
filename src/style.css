@@ -243,6 +243,8 @@ p {
 }
 .footer .contact {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .footer i {
   font-size: 2em;
