@@ -16,7 +16,7 @@ export default function Footer() {
         </a>
       </div>
       <p>&copy;All rights reserved.</p>
-      <p>Api used: https://api.spacexdata.com/v3/missions</p>
+      {/* <p>Api used: https://api.spacexdata.com/v3/missions</p> */}
     </div>
   );
 }
