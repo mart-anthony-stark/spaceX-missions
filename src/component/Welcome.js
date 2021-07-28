@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Welcome({ info, tab, links }) {
   return (
-    <div className={'home' + (tab == 'home' ? 'show' : 'hide')}>
+    <div className={'home ' + (tab == 'home' ? 'show' : 'hide')}>
       {info.summary}
       {info.name}
       {info.founder}

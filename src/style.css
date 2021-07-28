@@ -145,7 +145,7 @@ a {
 }
 /* HOME WELCOME SCREEN */
 .home {
-  
+  min-height: calc(80vh - 60px);
 }
 
 /* MISSIONS TAB */
