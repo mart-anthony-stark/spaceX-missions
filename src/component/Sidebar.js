@@ -6,12 +6,22 @@ export default function Sidebar({ tab, setTab, isOpen, setIsOpen }) {
       <div id="buttons">
         <button
           onClick={() => {
+            setTab('home');
+            setIsOpen(false);
+          }}
+        >
+          Home
+        </button>
+
+        <button
+          onClick={() => {
             setTab('mission');
             setIsOpen(false);
           }}
         >
           Missions
         </button>
+
         <button
           onClick={() => {
             setTab('history');

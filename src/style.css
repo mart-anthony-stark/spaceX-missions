@@ -12,6 +12,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: .3em;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: var(--accent);
+}
+/* ::-webkit-scrollbar-track {
+  width: 3px;
+} */
 span {
   color: var(--accent);
 }
@@ -131,6 +141,7 @@ nav .logo {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  padding: 16px;
   color: #faf8ff;
   min-height: 100vh;
 }
@@ -181,6 +192,7 @@ a {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .home .socials a {
   display: flex;
