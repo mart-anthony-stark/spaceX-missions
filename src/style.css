@@ -248,6 +248,9 @@ p {
   font-size: 2em;
   margin-right: 0.5em;
 }
+.footer p {
+  text-align: center;
+}
 #search {
   margin: 15px;
   background: none;
