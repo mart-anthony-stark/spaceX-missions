@@ -3,10 +3,16 @@ import React from 'react';
 export default function Welcome({ info, tab, links }) {
   return (
     <div className={'home ' + (tab == 'home' ? 'show' : 'hide')}>
-      {info.summary}
-      {info.name}
-      {info.founder}
-      {links.website}
+      <h1 className="logo">
+        Space<span>X</span>
+      </h1>
+      <h4 className="summary">{info.summary}</h4>
+
+      <div className="founder">
+        <h3>{info.founder}</h3>
+        <p>SpaceX CEO / Founder</p>
+      </div>
+
       <div className="socials">
         <a href={links.website} target="_blank">
           <i class="fa fa-globe" aria-hidden="true" />

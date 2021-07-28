@@ -29,6 +29,9 @@ nav {
   background: var(--pri);
   z-index: 1;
 }
+nav .logo {
+  user-select: none;
+}
 .menu {
   height: 45px;
   width: 45px;
@@ -118,6 +121,7 @@ nav {
   background: rgba(0, 0, 0, 0.2);
 }
 .logo {
+  user-select: none;
   font-size: 1.5em;
 }
 .app-main {
@@ -128,7 +132,6 @@ nav {
   background-size: cover;
   background-attachment: fixed;
   color: #faf8ff;
-  padding: 1em;
   min-height: 100vh;
 }
 .wrapper {
@@ -146,8 +149,39 @@ a {
 /* HOME WELCOME SCREEN */
 .home {
   min-height: calc(80vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3em;
+  margin-top: 1em;
 }
-
+.home .summary {
+  max-width: 500px;
+  text-align: center;
+}
+.home .logo {
+  font-size: 3em;
+  font-weight: bolder;
+}
+.home .logo span {
+  color: var(--accent);
+}
+.home .founder {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.home .founder h3 {
+  font-weight: bold;
+}
+.home .socials {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
 /* MISSIONS TAB */
 .mission {
   backdrop-filter: blur(50%);
