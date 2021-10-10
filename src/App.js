@@ -48,7 +48,7 @@ export default function App() {
 
   function missionIsEmpty() {
     return (
-      data.filter(m => {
+      data.filter((m) => {
         if (search == '') return m;
         return (
           m.mission_name.match(searchRegex) || m.description.match(searchRegex)
@@ -57,14 +57,14 @@ export default function App() {
     );
   }
 
-  var missions = data.filter(m => {
+  var missions = data.filter((m) => {
     if (search == '') return m;
     return (
       m.mission_name.match(searchRegex) || m.description.match(searchRegex)
     );
   });
 
-  var filteredHistory = history.filter(history => {
+  var filteredHistory = history.filter((history) => {
     if (search == '') return history;
     return history.title.match(searchRegex);
   });
@@ -94,12 +94,12 @@ export default function App() {
       </div>
 
       <div className={'wrapper ' + (tab == 'history' ? 'show' : 'hide')}>
-        {filteredHistory.map(history => {
+        {filteredHistory.map((history) => {
           return <History history={history} tab={tab} />;
         })}
       </div>
 
-      <div classNmae="wrapper" id={tab == 'history' ? 'show' : 'hide'} />
+      <div className="wrapper" id={tab == 'history' ? 'show' : 'hide'} />
 
       <Footer />
     </div>
